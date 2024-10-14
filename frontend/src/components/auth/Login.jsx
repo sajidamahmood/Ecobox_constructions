@@ -29,7 +29,7 @@ const Login = ({ onLogin }) => {
 
     // Proceed with API request if all validations pass
     try {
-      const response = await axios.post('http://localhost:8000/api/login', {
+      const response = await axios.post('https://ecobox-constructions.onrender.com/api/login', {
         email,
         password
       });
