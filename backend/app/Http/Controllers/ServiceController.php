@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
-    // Retrieve all services
     public function index()
-    {
-        return Service::all();
-    }
+{
+    $services = Service::all();
+    \Log::info($services); // Log the retrieved services to the log file
+    return response()->json($services);
+}
+
 
     // Retrieve a single service by ID
     public function show($id)
@@ -23,29 +25,30 @@ class ServiceController extends Controller
             return response()->json(['message' => 'Service not found'], 404);
         }
 
-        return $service;
+        // Add full URL for the service's image
+        $service->image = $service->image ? asset('storage/services_images/' . $service->image) : null;
+
+        return response()->json($service);
     }
 
     // Store a new service
     public function store(Request $request)
     {
-        // Validate the incoming request data
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Handle the image upload if there is one
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('services', 'public'); // Save image in storage/app/public/services
-            $request->merge(['image' => $imagePath]); // Add image path to request data
+            $imagePath = $request->file('image')->store('services_images', 'public');
+            $validated['image'] = $imagePath;
         }
 
-        // Create and return the new service
-        $service = Service::create($request->all());
+        $service = Service::create($validated);
+        $service->image = $service->image ? asset('storage/services_images/' . $service->image) : null;
 
-        return response()->json($service, 201); // HTTP status 201 Created
+        return response()->json($service, 201);
     }
 
     // Update an existing service
@@ -57,28 +60,25 @@ class ServiceController extends Controller
             return response()->json(['message' => 'Service not found'], 404);
         }
 
-        // Validate the incoming request data
-        $request->validate([
+        $validated = $request->validate([
             'title' => 'sometimes|required|string|max:255',
             'description' => 'sometimes|required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image for update
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Handle the image upload if there is one
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
             if ($service->image) {
                 Storage::disk('public')->delete($service->image);
             }
 
-            $imagePath = $request->file('image')->store('services', 'public'); // Save the new image
-            $request->merge(['image' => $imagePath]); // Add new image path to request data
+            $imagePath = $request->file('image')->store('services_images', 'public');
+            $validated['image'] = $imagePath;
         }
 
-        // Update and return the service
-        $service->update($request->all());
+        $service->update($validated);
+        $service->image = isset($validated['image']) ? asset('storage/services_images/' . $validated['image']) : $service->image;
 
-        return $service;
+        return response()->json($service);
     }
 
     // Delete a service
@@ -90,13 +90,11 @@ class ServiceController extends Controller
             return response()->json(['message' => 'Service not found'], 404);
         }
 
-        // Delete the image from storage if it exists
         if ($service->image) {
             Storage::disk('public')->delete($service->image);
         }
 
         $service->delete();
-
-        return response()->json(['message' => 'Service deleted successfully'], 204); // HTTP status 204 No Content
+        return response()->json(['message' => 'Service deleted successfully'], 204);
     }
 }

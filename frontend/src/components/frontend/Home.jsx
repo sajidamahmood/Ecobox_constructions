@@ -28,7 +28,6 @@ const Home = () => {
   return (
     <>
 <Header/>
-
 <main>
 <section className='section-1'>
     <div className='hero d-flex align-items-center'>
@@ -36,15 +35,14 @@ const Home = () => {
             <div className='text-center'>
                 <span>Welcome to Amazing Constructions</span>
                 <h1>Crafting dream with <br/>precision and excellence.</h1>
-                <p>We excel at transforming vision into reality through outstanding craftsmanship and precise<br/> arrention to details,with years of experince and dedication of qulity</p>
-               
+                <p>We excel at transforming vision into reality through outstanding
+                     craftsmanship and precise<br/> arrention to details,with years of experince and dedication of qulity</p>
             </div>
 
         </div>
     </div> 
 </section>
 {/*phone section*/}
-
 <section className='section-1a bg-light pt-4'>
     <div className='hero d-flex align-items-center'>
         <div className='container'>
@@ -63,9 +61,7 @@ const Home = () => {
         </div>
     </div> 
     </section>
-
 {/*About section*/}
-
 <section className='section-2 py-5'>
     <div className='container py-5'>
         <div className='row'>
@@ -86,7 +82,6 @@ const Home = () => {
     </div>
 
 </section>
-
 {/*Our service  section*/}
 <section className='section-3 bg-light py-5'>
 <div className='container-fluid  py-5'>
@@ -98,14 +93,14 @@ const Home = () => {
     <p>We offer a diverse construction services,spanning residential,commercial,and industrial projects.</p>
 </div>
 <div className='row pt-4'>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3  pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ServiceImg} alt="" className='w-100'/>
             </div>
             <div className='service-body'>
                 <div className='service-title'>
-                    <h3>Service Speciality Construction</h3>
+                    <h3>Service Speciality wall Renovation</h3>
                 </div>
                 <div className='service-content'>
                     <p>Speciality construction is a niche sector within the construction industry that focuses on projects requiring specialized skills, materials, and techniques.</p>
@@ -115,14 +110,14 @@ const Home = () => {
         </div>
     </div>
     {/* Repeat for other cards */}
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3  pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ServiceImg1} alt="" className='w-100'/>
             </div>
             <div className='service-body'>
                 <div className='service-title'>
-                    <h3>Service Speciality Construction</h3>
+                    <h3>Service Speciality Plomber</h3>
                 </div>
                 <div className='service-content'>
                     <p>Speciality construction is a niche sector within the construction industry that focuses on projects requiring specialized skills, materials, and techniques.</p>
@@ -131,14 +126,14 @@ const Home = () => {
             </div>
         </div>
     </div>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3  pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ServiceImg2} alt="" className='w-100'/>
             </div>
             <div className='service-body'>
                 <div className='service-title'>
-                    <h3>Service Speciality Construction</h3>
+                    <h3>Service Speciality Elctricity </h3>
                 </div>
                 <div className='service-content'>
                     <p>Speciality construction is a niche sector within the construction industry that focuses on projects requiring specialized skills, materials, and techniques.</p>
@@ -147,14 +142,14 @@ const Home = () => {
             </div>
         </div>
     </div>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3  pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ServiceImg3} alt="" className='w-100'/>
             </div>
             <div className='service-body'>
                 <div className='service-title'>
-                    <h3>Service Speciality Construction</h3>
+                    <h3>Service Speciality Flooring</h3>
                 </div>
                 <div className='service-content'>
                     <p>Speciality construction is a niche sector within the construction industry that focuses on projects requiring specialized skills, materials, and techniques.</p>
@@ -175,7 +170,7 @@ const Home = () => {
     <span>
     Why choose Us
     </span>
-    <h2>Discover our diverse range of Projects</h2>
+    <h2>Discover our diverse range of Solutions</h2>
     <p>Created in close partnershiop with our clints and collaborators,this approach merge industry expertise,<br />decades of experince,innovation,and flexibility to consistantly dilver excellence.</p>
 </div>
     <div className='row pt-4'>   
@@ -227,7 +222,6 @@ const Home = () => {
     
 </div>
 </section>
-
 {/*Our Projects*/}
 <section className='section-3 bg-light py-5'>
 <div className='container-fluid  py-5'>
@@ -239,7 +233,7 @@ const Home = () => {
     <p>We offer a diverse construction services,spanning residential,commercial,and industrial projects.</p>
 </div>
 <div className='row pt-4'>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3 pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ConstructionImg} alt="" className='w-100'/>
@@ -258,7 +252,7 @@ const Home = () => {
         </div>
 
     </div>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3 pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ConstructionImg1} alt="" className='w-100'/>
@@ -276,7 +270,7 @@ const Home = () => {
         </div>
 
     </div>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3 pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ConstructionImg2} alt="" className='w-100'/>
@@ -295,7 +289,7 @@ const Home = () => {
         </div>
 
     </div>
-    <div className='col-md-3 col-lg-3'>
+    <div className='col-md-3 col-lg-3 pt-4'>
         <div className='items'>
             <div className='service-image'>
                 <img src={ConstructionImg3} alt="" className='w-100'/>
@@ -318,7 +312,6 @@ const Home = () => {
 </div>
 </div>
 </section>
-
 {/*Testimonial*/}
 <section className='section-5 py-5'>
     <div className='container'>
@@ -494,11 +487,8 @@ const Home = () => {
 
 
 </section>
-
 {/*Our Blogs*/}
-
 </main>
-
 <Footer/>
 
 </>

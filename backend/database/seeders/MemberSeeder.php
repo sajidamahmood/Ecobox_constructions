@@ -12,12 +12,12 @@ class MemberSeeder extends Seeder
         DB::table('members')->insert([
             [
                 'name' => 'Sara',
-                'image_url' => 'storage/images/team1.jpg', // Make sure this matches your table
+                'image_url' => 'storage/images/team1.jpg', 
                 'description' => 'A brief description about Sara.',
             ],
             [
                 'name' => 'Jane Smith',
-                'image_url' => 'storage/images/team2.jpg', // Make sure this matches your table
+                'image_url' => 'storage/images/team2.jpg', 
                 'description' => 'A brief description about Jane.',
             ],
         ]);

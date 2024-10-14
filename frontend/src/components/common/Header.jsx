@@ -8,16 +8,12 @@ const Header = () => {
   return (
     <header>
     <div className='container py-3'>
-
         <Navbar expand="lg">
         <Navbar.Brand href="/" className='logo'>
         <img 
             src={logoImg} alt="Logo" 
-            style={{ height: '100px', width: 'auto' }}/>
-            <h6 className='name'>Ecobox</h6>
+            style={{ height: '150px', width: 'auto' }}/>
             </Navbar.Brand>
-                      
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto"> 
@@ -25,16 +21,9 @@ const Header = () => {
     <Nav.Link href="/About" className='nav-link'>About</Nav.Link>
     <Nav.Link href="/Services" className='nav-link'>Services</Nav.Link>
     <Nav.Link href="/Projects" className='nav-link'>Projects</Nav.Link>
-    <Nav.Link href="/ContactUs" className='nav-link'>Contact Us</Nav.Link>
-    <Nav.Link href="/Reservation" className='custom-btn'>Reservation</Nav.Link>
-    </Nav>
-
-
-    
-
+    <Nav.Link href="/ContactUs" className='nav-link'>Contact Us</Nav.Link></Nav>
         </Navbar.Collapse>
         </Navbar>
-
         </div>
 </header>
   )

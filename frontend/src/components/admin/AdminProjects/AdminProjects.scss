@@ -1,0 +1,45 @@
+.admin-projects {
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .btn {
+      margin-bottom: 20px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  
+    .project-list {
+      list-style: none;
+      padding: 0;
+  
+      .project-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+  
+        .project-name {
+          font-weight: bold;
+          font-size: 1.1em;
+        }
+  
+        .project-description {
+          margin-left: 10px;
+          color: #555;
+        }
+  
+        .project-actions {
+          button {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  

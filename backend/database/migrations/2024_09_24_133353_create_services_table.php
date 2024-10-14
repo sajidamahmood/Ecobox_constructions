@@ -13,16 +13,14 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // Service title
-            $table->text('description'); // Service description
-            $table->string('image')->nullable(); // Service image
+            $table->string('title'); 
+            $table->text('description'); 
+            $table->string('image')->nullable(); 
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('services');

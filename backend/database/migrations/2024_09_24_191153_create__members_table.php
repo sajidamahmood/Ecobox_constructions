@@ -16,7 +16,7 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image_url')->nullable(); // Image URL (optional)
+            $table->string('image')->nullable(); // Image URL (optional)
             $table->text('description')->nullable(); // Description (optional)
             $table->timestamps();
         });

@@ -1,6 +1,6 @@
 
 //Global Colors
-$primary-color: #fe538d;
+$primary-color: #0056b3;
 $secondary-color:#ffb703;
 $text-color:#000;
 $text-white:#fff;
@@ -96,22 +96,28 @@ header{
        
     }
 }
+
 .custom-btn {
-    background-color: #28a745;
+    background-color: #0056b3;
     color: white;
     border-radius: 5px; 
 }
 
-.section-1{
-    .hero{
-        background: linear-gradient(to right, rgba(0,0,0,0.8),rgba(0,0,0,0)),url('../images/hero.jpg');
-        min-height: 800px;
+.section-1 {
+    .hero {
+        background: 
+            linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+            url('../images/hero0.jpg'); 
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center; 
+                min-height: 800px;
         color: $text-white;
-        span{
+        
+        span {
             color: $secondary-color;
-        font-size: 1.5em;
-        font-weight: 500;
-
+            font-size: 1.5em;
+            font-weight: 500;
         }
     }
 }
@@ -185,7 +191,7 @@ header{
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker background on hover */
+    background-color: #0056b3;
 }
 
 .section-3{
@@ -290,6 +296,9 @@ section-6{
 /* Hero Section */
 .hero-section {
     background: linear-gradient(to right, rgba(0,0,0,0.8),rgba(0,0,0,0)),url('../images/hero.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 100px 0;
     color: #fff;
     position: relative;
