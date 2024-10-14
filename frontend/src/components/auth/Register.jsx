@@ -49,7 +49,7 @@ const Register = () => {
     // Proceed with API request if all validations pass
     try {
       // Make POST request to your Laravel register API
-      const response = await Axios.post('http://127.0.0.1:8000/api/register', formData);
+      const response = await Axios.post('https://ecobox-constructions.onrender.com/api/register', formData);
       setSuccess('Registration successful!');
       setError('');
     } catch (error) {
