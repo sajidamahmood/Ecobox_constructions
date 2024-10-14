@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import React from 'react'; 
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style.scss';
@@ -7,14 +8,17 @@ import About from './components/frontend/About';
 import Projects from './components/frontend/Projects';
 import ContactUs from './components/frontend/ContactUs';
 import Services from './components/frontend/Services';
+import Reservation from './components/frontend/Services';
+
 import Login from './components/auth/Login'; 
 import Register from './components/auth/Register'; 
-import AdminDashboard from './components/admin/AdminDashboard';
+import AdminDashboard from './components/admin/AdminDashboard'; 
 import AdminLayout from './components/admin/AdminLayout';
-import AdminServices from './components/admin/AdminServices';
-import AdminProjects from './components/admin/AdminProjects';
-import AdminTestimonials from './components/admin/AdminTestimonials';
-import AdminMembers from './components/admin/AdminMembers';
+import AdminProjects from './components/admin/AdminProjects/AdminProjects';
+import AdminTestimonials from './components/admin/AdminTestimonials/AdminTestimonials';
+import AdminMembers from './components/admin/AdminMembers/AdminMembers';
+import AdminServices from './components/admin/AdminServices/AdminServices';
+
 
 function App() {
   // State to track if the admin is logged in
@@ -22,7 +26,6 @@ function App() {
 
   // Mock login function for testing
   const login = () => {
-    // In a real app, you'd check credentials and set the authentication state
     setIsAuthenticated(true);
   };
 
@@ -39,6 +42,8 @@ function App() {
         <Route path='/projects' element={<Projects />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/services' element={<Services />} />
+        <Route path='/Reservation' element={<ContactUs />} />
+        
         <Route path='/login' element={<Login onLogin={login} />} />
         <Route path='/register' element={<Register />} />
 
@@ -61,7 +66,7 @@ function App() {
             }
           />
           <Route
-            path='services'
+            path='Services'
             element={
               <ProtectedRoute>
                 <AdminServices />

@@ -9,7 +9,6 @@ class Service extends Model
 {
     use HasFactory;
 
-    // Define fillable properties
     protected $fillable = [
         'title',
         'description',

@@ -9,7 +9,6 @@ class Project extends Model
 {
     use HasFactory;
 
-    // Define fillable properties
     protected $fillable = [
         'name',
         'description',
@@ -17,4 +16,8 @@ class Project extends Model
         'end_date',
         'image', 
        ];
+       
+       public function members()
+{return $this->belongsToMany(Member::class, 'project_members') ;}
 }
+

@@ -7,9 +7,9 @@ const Footer = () => {
 <div className='row'>
     <div className='col-md-3'>
         <h3>Urbanedge construction</h3>
-        <div><p>Our post-construction services gives you peace of mind knowing that still here for you even after</p>
+        <div><p>Our post-construction services gives you 
+            peace of mind knowing that still here for you even after</p>
         </div>
-          
     </div>
     <div className='col-md-3 '>
     <h3 className='mb-3'>Services</h3>
@@ -25,10 +25,8 @@ const Footer = () => {
         </li>
         <li>
             <a href="">Speciality construction</a>
-        </li>
-
+       </li>
     </ul>
-
     </div>
     <div className='col-md-3'>
     <h3 className='mb-3'>Quick Links</h3>
@@ -48,7 +46,6 @@ const Footer = () => {
         <li>
             <a href="">Contact Us</a>
         </li>
-
     </ul>
 
     </div>
