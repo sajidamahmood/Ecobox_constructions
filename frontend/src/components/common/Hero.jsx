@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Hero = ({ preHeading, heading, text }) => {
+  
   return (
     <section className="hero-section">
       <div className="container">

@@ -1,0 +1,88 @@
+/* QualitySection.css */
+.quality-section {
+    display: flex;
+    padding: 40px 20px;
+    background-color: #e0e0e0; /* Light gray background to keep it subtle */
+  }
+  
+  .quality-card {
+    align-items: center;
+    gap: 20px;
+    background-color: #1aa7a7; /* White card background for clarity */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0; /* Light border for definition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    width: 48%; /* Adjusted width for spacing */
+    text-align: center;
+  }
+  .quality-card1 {
+    align-items: center;
+    gap: 20px;
+    background-color: #555; /* White card background for clarity */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0; /* Light border for definition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    width: 48%; /* Adjusted width for spacing */
+    text-align: center;
+  }
+  
+  
+  
+  .quality-card-content {
+    flex-grow: 1;
+  }
+  
+  .quality-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #e0e0e0; 
+  }
+  
+  .quality-card-subtitle {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 8px;
+    color: #555; /* Medium gray for subtitle */
+  }
+  .quality-card1-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #e0e0e0; 
+  }
+  .quality-card1-subtitle {
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 8px;
+    color: #1aa7a7; /* Medium gray for subtitle */
+  }
+  .quality-card1-description {
+    font-size: 14px;
+    color: #1aa7a7; /* Slightly darker gray for the description */
+    margin-bottom: 16px;
+  }
+  .quality-card-description {
+    font-size: 14px;
+    color: #555; /* Slightly darker gray for the description */
+    margin-bottom: 16px;
+  }
+  
+  .quality-card-button {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #f96302; /* Primary blue for call-to-action button */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .quality-card-button:hover {
+    background-color: #45a049; /* Darker blue on hover */
+  }
+  

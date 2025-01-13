@@ -15,16 +15,16 @@ const Footer = () => {
     <h3 className='mb-3'>Services</h3>
     <ul>
         <li>
-            <a href="">Speciality construction</a>
+            <a href="">Speciality Electricity</a>
         </li>
         <li>
-            <a href="">Speciality construction</a>
+            <a href="">Speciality Plomber</a>
         </li>
         <li>
-            <a href="">Speciality construction</a>
+            <a href="">Speciality Flooring</a>
         </li>
         <li>
-            <a href="">Speciality construction</a>
+            <a href="">Speciality Roofing</a>
        </li>
     </ul>
     </div>

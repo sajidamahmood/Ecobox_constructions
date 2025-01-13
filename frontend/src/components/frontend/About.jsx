@@ -8,6 +8,7 @@ import Hero from '../common/Hero';
 
 const About = () => {
   const [teamMembers, setTeamMembers] = useState([]);
+  const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:8000'; // Adjust according to your setup
 
   // Fetch team members from the API
   useEffect(() => {
@@ -60,10 +61,12 @@ const About = () => {
               {teamMembers.map(member => (
                 <div key={member.id} className="col-md-4 text-center">
                   <div className="team-member">
-                    <img src={`http://127.0.0.1:8000/storage/team_images/${member.image_url || 'default.jpg'}`} 
-                      alt={member.name} 
-                      className="img-fluid rounded-circle mb-3" 
-                    />
+  
+                  <img
+                  src={`${baseUrl}${member.image_url}`}
+                  alt={member.name}
+                  onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }} // Placeholder image
+                  class="img-fluid rounded-circle mb-3" width="400" />
                     <h4>{member.name}</h4>
                     <p className="text-muted">{member.description}</p>
                   </div>

@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-import Header from '../common/Header';
-import Footer from '../common/Footer';
+import HeaderNavigation from '../common/HeaderNavigation';
+import FooterBanner from '../common/FooterBanner';
 import Hero from '../common/Hero';
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import './Login.css';
+import { useNavigate, Link } from "react-router-dom";
+import axiosInstance, { setAuthHeader } from "../../api/axios";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+
   const navigate = useNavigate();
+
+  const handleLoginCallback = (data) => {
+    console.log("User login callback:", data);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Reset error before validation
+    setError('');
 
-    // Validation checks
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       setError('Invalid email format.');
@@ -27,35 +35,42 @@ const Login = ({ onLogin }) => {
       return;
     }
 
-    // Proceed with API request if all validations pass
     try {
-      const response = await axios.post('https://ecobox-constructions.onrender.com/api/login', {
-        email,
-        password
-      });
-
+      const response = await axiosInstance.post("/login", { email, password });
       const { token, user } = response.data;
 
-      // Store the token in localStorage for authenticated requests
+      // Store user data in localStorage
       localStorage.setItem('auth_token', token);
+      localStorage.setItem('role', user.role);
+      localStorage.setItem('username', user.name);
 
-      // Optionally store user info
-      onLogin(user);
+      setAuthHeader(token);
+      handleLoginCallback({ token, user });
 
-      // Redirect to admin dashboard upon successful login
-      navigate('/admin/dashboard');
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setError('Invalid email or password');
+      const currentPath = window.location.pathname;
+      if (currentPath === "/" || currentPath === "/login") {
+        navigate("/"); // Stay on home page
       } else {
-        setError('An error occurred, please try again.');
+        if (user.role === "admin") {
+          navigate("/admin/dashboard");
+        } else {
+          navigate("/user-dashboard");
+        }
+      }
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.message || 'An error occurred, please try again.');
+      } else if (error.request) {
+        setError('No response from server. Please check your connection.');
+      } else {
+        setError('Something went wrong. Please try again.');
       }
     }
   };
 
   return (
     <>
-      <Header />
+      <HeaderNavigation />
       <main>
         <Hero 
           preHeading="Quality. Integrity. Value" 
@@ -64,7 +79,7 @@ const Login = ({ onLogin }) => {
         />
 
         <div className="login-container">
-          <h2>Admin Login</h2>
+          <h2>Login</h2>
           {error && <p className="error-text">{error}</p>}
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
@@ -78,24 +93,46 @@ const Login = ({ onLogin }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
+            <div className="form-group position-relative">
+      <label htmlFor="password">Password</label>
+      <div className="input-group">
+        <input
+          type={showPassword ? 'text' : 'password'}
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password"
+          className="form-control"
+          required
+        />
+        <span
+          className="position-absolute end-0 top-50 translate-middle-y me-2"
+          onClick={() => setShowPassword(!showPassword)}
+          style={{ cursor: 'pointer' }}
+        >
+          {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </span>
+      </div>
+      <div className="forgot-password-prompt">
+            <p>
+              Forgot your password? <Link to="/forgot-password">Reset it here</Link>
+
+            </p>
+          </div>
+    </div>
+            <button type="submit" className="login">
               Login
             </button>
           </form>
+          <div className="register-prompt">
+            <p>
+              Don't have an account? <Link to="/register">Register here</Link>
+            </p>
+          </div>
+          
         </div>
       </main>
-      <Footer />
+      <FooterBanner />
     </>
   );
 };

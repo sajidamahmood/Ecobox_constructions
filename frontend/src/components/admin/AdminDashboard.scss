@@ -1,0 +1,25 @@
+.dashboard {
+    display: flex;
+    .sidebar {
+      width: 200px;
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 10px;
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+  }
+  
