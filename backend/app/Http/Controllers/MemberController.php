@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -6,7 +6,6 @@ use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-
 
 class MemberController extends Controller
 {
@@ -32,85 +31,92 @@ class MemberController extends Controller
     // POST - Create a new member
     public function store(Request $request)
     {
-        // Log incoming request data
         Log::info('Incoming Request to Create Member:', $request->all());
 
-        // Validate incoming request data
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048', // Validate image
+            'image_url' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'description' => 'nullable|string',
         ]);
 
-        // Handle image upload if present
-        if ($request->hasFile('image')) {
-            // Store the image in the 'public/team_images' directory
-            $path = $request->file('image')->store('team_images', 'public');
-            $validatedData['image'] = Storage::url($path); // Get the public URL
+        if ($request->hasFile('image_url')) {
+            Log::info('Image upload initiated.');
+
+            $path = $request->file('image_url')->store('images', 'public');
+            $imageUrl = Storage::url($path);
+            $validatedData['image_url'] = $imageUrl;
+
+            Log::info('Uploaded Image Details:', [
+                'filename' => $request->file('image_url')->getClientOriginalName(),
+                'path' => $path,
+                'url' => $imageUrl
+            ]);
+        } else {
+            Log::info('No image was uploaded.');
         }
 
-        // Create a new member
         $member = Member::create($validatedData);
 
-        // Log created member data
         Log::info('Created Member:', $member->toArray());
 
-        return response()->json($member, 201); // Return 201 Created
+        return response()->json($member, 201);
     }
 
     // PUT/PATCH - Update a member by ID
     public function update(Request $request, $id)
     {
-        // Find the member by ID
         $member = Member::find($id);
 
         if (!$member) {
             return response()->json(['message' => 'Member not found'], 404);
         }
 
-        // Validate incoming data for update
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048', // Validate image
-            'description' => 'nullable|string',
-        ]);
+        $member->name = $request->input('name', $member->name);
+        $member->description = $request->input('description', $member->description);
 
-        // Handle image upload if present
-        if ($request->hasFile('image')) {
-            // Delete old image if exists
-            if ($member->image) {
-                $oldImagePath = str_replace('/storage/', '', $member->image);
-                Storage::disk('public')->delete($oldImagePath);
+        // Check if a new image file is uploaded
+        if ($request->hasFile('image_url')) {
+            Log::info('Image file detected in request.');
+
+            // Delete the old image if it exists
+            if ($member->image_url) {
+                $oldImagePath = str_replace('/storage/', '', $member->image_url);
+                if (Storage::disk('public')->exists($oldImagePath)) {
+                    Storage::disk('public')->delete($oldImagePath);
+                }
             }
 
             // Store the new image
-            $path = $request->file('image')->store('team_images', 'public');
-            $validatedData['image'] = Storage::url($path); // Get the public URL
+            $imagePath = $request->file('image_url')->store('images', 'public');
+            $member->image_url = Storage::url($imagePath);
+
+            Log::info('New image stored successfully at path: ' . $member->image_url);
+        } else {
+            Log::warning('No image file detected in request.');
         }
 
-        // Update the member with the validated data
-        $member->update($validatedData);
+        $member->save();
 
-        return response()->json($member, 200); // Return 200 OK
+        return response()->json([
+            'message' => 'Member updated successfully',
+            'member' => $member
+        ]);
     }
 
     // DELETE - Remove a member by ID
     public function destroy($id)
     {
-        // Find the member by ID
         $member = Member::find($id);
 
         if (!$member) {
             return response()->json(['message' => 'Member not found'], 404);
         }
 
-        // Delete the image if exists
-        if ($member->image) {
-            $imagePath = str_replace('/storage/', '', $member->image);
+        if ($member->image_url) {
+            $imagePath = str_replace('/storage/', '', $member->image_url);
             Storage::disk('public')->delete($imagePath);
         }
 
-        // Delete the member
         $member->delete();
 
         return response()->json(['message' => 'Member deleted successfully'], 200);

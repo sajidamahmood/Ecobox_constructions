@@ -2,9 +2,13 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
 
-  baseURL: 'http://127.0.0.1:8000/api',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
   withCredentials: true,
 });
+
+
+console.log("API Base URL:", process.env.REACT_APP_API_BASE_URL);
+
 
 export const setAuthHeader = (token) => {
   if (token) {
@@ -25,6 +29,7 @@ if (csrfToken) {
 } else {
   console.warn("CSRF token not found. Ensure it's added to your HTML.");
 }
+console.log("CSRF Token:", csrfToken); // Make sure it's not null or undefined
 
 
 export default axiosInstance;

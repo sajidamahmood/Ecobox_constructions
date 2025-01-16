@@ -8,16 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'name',
-        'description',
-        'start_date',
-        'end_date',
+        'name', 
         'image', 
-       ];
-       
-       public function members()
-{return $this->belongsToMany(Member::class, 'project_members') ;}
+        'description', 
+        'start_date',
+         'end_date'];
 }
-
+   
+    

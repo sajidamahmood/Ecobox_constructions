@@ -4,6 +4,7 @@ import logoImg from '../../assets/images/logo.jpg';
 import loginIcon from '../../assets/images/login-icon.jpg'; 
 
 
+
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // State for the hamburger menu

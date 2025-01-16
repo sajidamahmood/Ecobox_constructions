@@ -76,7 +76,7 @@ const Register = () => {
   
     // Proceed with API request if all validations pass
     try {
-      const response = await Axios.post('http://127.0.0.1:8000/api/register', formData);
+      const response = await Axios.post('https://ecobox-constructions.onrender.com/api/register', formData);
       console.log('API Response:', response.data); // Debug successful API response
       setSuccess('Registration successful!');
       setError('');

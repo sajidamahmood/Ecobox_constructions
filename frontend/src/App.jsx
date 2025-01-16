@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/style.scss';
+import './assets/css/style.css';
 
 import Home from './components/frontend/Home';
 import About from './components/frontend/About';
@@ -17,10 +17,6 @@ import InteriorRenovation from './components/frontend/InteriorRenovation';
 import ExteriorWorks from './components/frontend/ExteriorWorks'; 
 import WhoweAre from './components/frontend/WhoweAre'; 
 import Allprojects from'./components/frontend/Allprojects';
-
-
-
-
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import ForgotPassword from './components/auth/ForgotPassword';
@@ -80,7 +76,6 @@ function App() {
         <Route path="/interior-renovation" element={<InteriorRenovation/>} /> 
         <Route path="/exterior-works" element={<ExteriorWorks/>} /> 
         <Route path="/who-we-are" element={<WhoweAre/>} /> 
-
 
 
         {/* Authentication Routes */}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import HeaderNavigation from '../common/HeaderNavigation';
 import FooterBanner from '../common/FooterBanner';
 import Hero from '../common/Hero';
-import './Login.css';
 import { useNavigate, Link } from "react-router-dom";
 import axiosInstance, { setAuthHeader } from "../../api/axios";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -36,7 +35,7 @@ const Login = ({ onLogin }) => {
     }
 
     try {
-      const response = await axiosInstance.post("/login", { email, password });
+      const response = await axiosInstance.post("https://ecobox-constructions.onrender.com/api/login", { email, password });
       const { token, user } = response.data;
 
       // Store user data in localStorage

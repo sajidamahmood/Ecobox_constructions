@@ -17,12 +17,6 @@ class ProjectSeeder extends Seeder
                 'end_date' => '2025-06-30',
                 'image' => 'commercial_complex.jpg', ]) ;
         
-            Projet::create([
-                'name' => 'Villas résidentielles',
-                'description' => 'Projet de villas résidentielles ',
-                'start_date' => '2024-07-01',
-                'end_date' => '2025-05-30',
-                'image' => 'villas_projet.jpg', ]);
         }
         
     }

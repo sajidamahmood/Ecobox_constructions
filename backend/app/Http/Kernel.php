@@ -7,22 +7,21 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
-        // Global HTTP middleware
+        \Fruitcake\Cors\HandleCors::class,  
     ];
 
     protected $middlewareGroups = [
         'web' => [
-            // Web middleware group
         ],
 
-        'api' => [
-            'throttle:api',
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        ],
+       'api' => [
+        \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+        'throttle:api',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
     ];
 
     protected $routeMiddleware = [
-       
-        'admin' => \App\Http\Middleware\RoleMiddleware::class, 
-      ];
+        'role' => \App\Http\Middleware\RoleMiddleware::class,
+    ];
 }

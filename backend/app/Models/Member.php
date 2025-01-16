@@ -11,12 +11,7 @@ class Member extends Model
 
     protected $fillable = [
         'name',
-        'image',
+        'image_url',
         'description',
     ];
-
-    public function projects()
-    {
-        return $this->belongsToMany(Project::class, 'project_members');
-    }
 }
