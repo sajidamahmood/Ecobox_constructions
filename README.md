@@ -128,19 +128,19 @@ Suivez ces étapes pour déployer l'application Ecobox Constructions dans un env
 - **Frontend** :
  Créez un fichier `.env` dans le dossier `frontend` et configurez l'URL de l'API de production :
   
-  REACT_APP_API_URL=https://your-production-backend.com/api
+  REACT_APP_API_URL=https://https://ecobox-constructions.onrender.com//api
 
 APP_ENV=production
 APP_KEY=your_application_key
 APP_DEBUG=false
-APP_URL=https://your-production-url.com
+APP_URL=https://https://ecobox-constructions.onrender.com/
 
 DB_CONNECTION=mysql
-DB_HOST=mysql-2940c906-mudasarsajida-b3dd.d.aivencloud.com
-DB_PORT=16370
+DB_HOST=
+DB_PORT=
 DB_DATABASE=defultdb
-DB_USERNAME=avnadmin
-DB_PASSWORD=avns_nf4tbH9UUaQBsM8cxQ8
+DB_USERNAME=*********
+DB_PASSWORD=*********
 
 Installer les dépendances
 
