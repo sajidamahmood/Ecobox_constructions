@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
     }
 
     try {
-      const response = await axiosInstance.post("https://ecobox-constructions.onrender.com/api/login", { email, password });
+      const response = await axiosInstance.post("http://127.0.0.1:8000/api/login", { email, password });
       const { token, user } = response.data;
 
       // Store user data in localStorage

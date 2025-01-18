@@ -26,6 +26,7 @@ import AdminDashboard from './components/admin/AdminDashboard';
 import AdminLayout from './components/admin/AdminLayout';
 import AdminServices from './components/admin/AdminServices';
 import AdminProjects from './components/admin/AdminProjects';
+import AdminMembers from './components/admin/AdminMembers';
 import UserDashboard from './components/user/UserDashboard'; 
 
 // ProtectedRoute component
@@ -116,7 +117,16 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="members"
+            element={
+              <ProtectedRoute requiredRole="admin">
+                <AdminMembers />
+              </ProtectedRoute>
+            }
+          />
         </Route>
+        
 
         {/* User Routes */}
         <Route

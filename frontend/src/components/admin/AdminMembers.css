@@ -1,0 +1,64 @@
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .list-group-item div {
+    flex: 1;
+  }
+  
+  .list-group-item div.description {
+    flex: 2;
+  }
+  
+  .list-group-item img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .action-buttons button {
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+  }
+
+  
+  
+  .list-group-item .action-buttons {
+    
+      .edit-btn {
+        background-color: #f96302; /* Custom orange for Edit */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        padding: 8px 12px; /* Adjust padding */
+        border-radius: 4px; /* Optional rounded corners */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    
+        &:hover {
+          background-color: #e25b01; /* Darker shade for hover */
+        }
+      }
+    
+      .delete-btn {
+        background-color: #c82333; /* Custom red for Delete */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        padding: 8px 12px; /* Adjust padding */
+        border-radius: 4px; /* Optional rounded corners */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    
+        &:hover {
+          background-color: #a71d2a; /* Darker shade for hover */
+        }
+      }
+    }
+    
+ 

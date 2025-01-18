@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Logout from "../auth/Logout"; // Relative to the AdminLayout.jsx file
-import './AdminLayout.scss'; 
+ 
 
 
 const AdminLayout = () => {
   return (
     <div className="admin-layout">
       <div className="sidebar">
-        <h1>Admin Panel</h1>
+        <h1>Panneau d'administration</h1>
         <ul>
-        <li><Link to="/admin/Dashboard">Dashboard</Link></li>
+        <li><Link to="/admin/Dashboard">Tableau de bord</Link></li>
 
-          <li><Link to="/admin/services">Our Services</Link></li>
-          <li><Link to="/admin/projects">Our Projects</Link></li>
+          <li><Link to="/admin/services">Nos services</Link></li>
+          <li><Link to="/admin/projects">Nos Projects</Link></li>
+
         </ul>
         <div className="logout-container">
           <Logout /> {/* Logout button placed outside the list */}

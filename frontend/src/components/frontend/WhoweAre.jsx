@@ -33,7 +33,7 @@ const WhoweAre = () => {
         <div className="card">
           <h3>NOUS VOUS SIMPLIFIONS VOS TRAVAUX</h3>
           <p>
-            YVotre courtier La Maison Des Travaux vous aide à mener à bien vos projets de travaux :
+            Votre courtier Ecobox energie vous aide à mener à bien vos projets de travaux :
           </p>
           <ul>
             <li>Il vous propose des solutions et des chiffrages précis de vos projets, gratuitement et sans engagement de votre part.</li>
@@ -46,7 +46,7 @@ const WhoweAre = () => {
           Les services de courtage en travaux sont gratuits pour vous :</p>
           <ul>
             <li>Nos courtiers se chargent de vous mettre en relation avec nos partenaires du bâtiment, financiers et spécialisés dans l'assurance, professionnels que nous avons sélectionnés pour leur sérieux et la qualité de leurs prestations.</li>
-            <li>Avec la Carte Avantages La Maison Des Travaux, vous avez accès à notre panel de partenaires négociants en matériaux afin de bénéficier de tarifs préférentiels et de conseils de professionnels.</li>
+            <li>Avec la Carte Avantages Ecobox energie, vous avez accès à notre panel de partenaires négociants en matériaux afin de bénéficier de tarifs préférentiels et de conseils de professionnels.</li>
           </ul>
         </div>
         <div className="card">

@@ -13,7 +13,7 @@ const ServiceDetail = () => {
       try {
         const response1 = await axios.get(`${baseUrl}/api/services/1`);
         const response2 = await axios.get(`${baseUrl}/api/services/2`);
-        const response3 = await axios.get(`${baseUrl}/api/services/3`);
+        const response3 = await axios.get(`${baseUrl}/api/services/8`);
         
         setServices([response1.data, response2.data, response3.data]);
       } catch (err) {

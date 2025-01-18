@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const ProjectDetail = () => {
   const [projects, setProjects] = useState([]); // Array to hold all projects
   const [error, setError] = useState(null);
+
+
   const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:8000';
 
   useEffect(() => {

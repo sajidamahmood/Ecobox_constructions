@@ -1,11 +1,9 @@
 import React from 'react';
 import HeaderNavigation from '../common/HeaderNavigation'
 import UpperBar from '../common/UpperBar'; 
-import Header from '../common/Header';
 import  FooterBanner from '../common/FooterBanner';
 import Hero from '../common/Hero';
 import contactImage from '../../assets/images/contact.jpg';  
-
 import QuoteForm from '../common/QuoteForm';
 
 const ContactUs = () => {
@@ -21,8 +19,10 @@ const ContactUs = () => {
         />
 
         <section className="section-9 py-5">
+          
           <div className="container">
             <div className="section-header text-center">
+              
               <h2>Une question à nous poser ? Des travaux à réaliser ? Vous souhaitez un devis ?</h2>
               <p>
               Laissez nous un message, nous vous contacterons rapidement. Devis gratuit et sans engagement.

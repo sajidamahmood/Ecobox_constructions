@@ -20,7 +20,7 @@ class ResetPasswordMail extends Mailable
 
     public function __construct($resetLink)
     {
-        $this->resetLink = $resetLink;
+        $this->resetLink = $resetLink; // Use the passed resetLink
     }
 
     

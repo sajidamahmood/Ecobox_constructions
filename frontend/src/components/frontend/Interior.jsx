@@ -12,12 +12,12 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response1 = await axios.get(`${baseUrl}/api/projects/26`);
-        const response2 = await axios.get(`${baseUrl}/api/projects/25`);
-        const response3 = await axios.get(`${baseUrl}/api/projects/5`);
-        const response4 = await axios.get(`${baseUrl}/api/projects/27`);
-        const response5 = await axios.get(`${baseUrl}/api/projects/28`);
-        const response6 = await axios.get(`${baseUrl}/api/projects/29`);
+        const response1 = await axios.get(`${baseUrl}/api/projects/1`);
+        const response2 = await axios.get(`${baseUrl}/api/projects/2`);
+        const response3 = await axios.get(`${baseUrl}/api/projects/3`);
+        const response4 = await axios.get(`${baseUrl}/api/services/8`);
+        const response5 = await axios.get(`${baseUrl}/api/projects/4`);
+        const response6 = await axios.get(`${baseUrl}/api/projects/7`);
   
         // Combine all the fetched projects into the state
         setProjects([

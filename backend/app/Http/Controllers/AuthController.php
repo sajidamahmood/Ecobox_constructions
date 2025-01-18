@@ -213,29 +213,42 @@ class AuthController extends Controller
      * )
      */
 
-    public function forgotPassword(Request $request)
-{
-    $request->validate(['email' => 'required|email']);
+     public function forgotPassword(Request $request)
+     {
+         $request->validate(['email' => 'required|email']);
+     
+         $user = User::where('email', $request->email)->first();
+         if (!$user) {
+             return response()->json(['message' => 'User not found'], 404);
+         }
+     
+         // Delete existing tokens
+         PasswordResetToken::where('email', $user->email)->delete();
+     
+         // Generate a new token
+         $token = Str::random(64);
+         PasswordResetToken::create([
+             'email' => $user->email,
+             'token' => $token,
+             'created_at' => now(),
+         ]);
+     
+         // Generate the reset link
+         $resetLink = env('FRONTEND_URL') . "/reset-password/{$token}";
+     
+         // Send email with the reset link
+         try {
+             Mail::to($user->email)->send(new ResetPasswordMail($resetLink));
+         } catch (\Exception $e) {
 
-    $user = User::where('email', $request->email)->first();
-    if (!$user) {
-        return response()->json(['message' => 'User not found'], 404);
-    }
+            \Log::error('Error sending reset password email: ' . $e->getMessage());
 
-    $token = Str::random(64);
-    PasswordResetToken::create([
-        'email' => $user->email,
-        'token' => $token,
-        'created_at' => now(),
-    ]);
-
-    $resetLink = url("/reset-password/{$token}");
-
-    // Send email
-    Mail::to($user->email)->send(new ResetPasswordMail($resetLink));
-
-    return response()->json(['message' => 'Password reset link sent!']);
-}
+             return response()->json(['message' => 'Failed to send email. Please try again later.'], 500);
+         }
+     
+         return response()->json(['message' => 'Password reset link sent!']);
+     }
+     
 
 /**
      * @OA\Post(
