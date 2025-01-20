@@ -3,6 +3,7 @@ import './WhoweAre.css';
 import UpperBar from '../common/UpperBar'; 
 import HeaderNavigation from '../common/HeaderNavigation'
 import FooterBanner from '../common/FooterBanner';
+import Hero from '../common/Hero';
 
 
 
@@ -17,6 +18,7 @@ const WhoweAre = () => {
    <HeaderNavigation />
 
 <main>
+<Hero/>
 
     <div className='Container'>
 

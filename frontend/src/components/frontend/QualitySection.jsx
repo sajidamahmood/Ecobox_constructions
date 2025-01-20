@@ -17,7 +17,7 @@ const QualitySection = () => {
             qualité et le sérieux de leur prestation.
           </div>
           <a
-            href="/charte-qualite"
+            href="/who-we-are"
             className="quality-card-button"
           >
             EN SAVOIR PLUS SUR NOTRE CHARTE
@@ -38,7 +38,7 @@ const QualitySection = () => {
             en choisissant un des architectes de notre réseau.
           </div>
           <a
-            href="/reseau-architectes"
+            href="/ContactUs"
             className="quality-card-button"
           >
             EN SAVOIR PLUS SUR NOTRE RÉSEAU

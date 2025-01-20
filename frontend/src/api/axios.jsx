@@ -1,11 +1,6 @@
 import axios from 'axios';
 
-
-
-
-
 console.log("Environment Variables:", import.meta.env); // Debug all variables
-
 
 const axiosInstance = axios.create({
 
@@ -13,9 +8,7 @@ const axiosInstance = axios.create({
   withCredentials: true,
 });
 
-
 console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
-
 
 export const setAuthHeader = (token) => {
   if (token) {

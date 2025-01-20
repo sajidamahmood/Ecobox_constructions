@@ -13,9 +13,9 @@ const ContactUs = () => {
        <HeaderNavigation />
       <main>
         <Hero
-          preHeading="Quality. Integrity. Value"
+          /*preHeading="Quality. Integrity. Value"
           heading="Contact Us"
-          text="We offer diverse construction services, spanning residential,<br/> commercial, and industrial projects."
+          text="We offer diverse construction services, spanning residential,<br/> commercial, and industrial projects."*/
         />
 
         <section className="section-9 py-5">
@@ -33,7 +33,7 @@ const ContactUs = () => {
               <div className="col-md-6">
                 <div className="card-body p-20 w-[70%]">
                 <h3>Contactez-Nous</h3>
-                    <div>
+                    <div className="Contact-quoteform">
                     <QuoteForm />
                     </div>
 

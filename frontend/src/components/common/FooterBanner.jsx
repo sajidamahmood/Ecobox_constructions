@@ -27,7 +27,8 @@ const Footer = () => {
             <ul>
             </ul>
             <br/>
-            <button className="cta-button">Des travaux pour les pros ?</button>
+            <a href="/ContactUs" className="cta-button">Des travaux pour les pros ?
+            </a>
           </div>
           <div className="footer-column">
             <h3>NOS GUIDES THÉMATIQUES</h3>

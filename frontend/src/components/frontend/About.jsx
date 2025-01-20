@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AboutImg from '../../assets/images/we.jpg'
 import Header from '../common/Header';
-import Footer from '../common/Footer';
 import Hero from '../common/Hero';
  
 
@@ -76,7 +75,6 @@ const About = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 };

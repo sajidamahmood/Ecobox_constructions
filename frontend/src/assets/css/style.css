@@ -1,7 +1,6 @@
 
-
 body{
-    font-family: "Arial", sans-serif;
+font-family: "Arial", sans-serif;
 }
 
 .header {
@@ -26,7 +25,7 @@ body{
   border: none;
   cursor: pointer;
   color: #333;
-  align-self: center; /* Aligns with contact buttons */
+  align-self: center; 
   margin-left: 1rem;
 }
 
@@ -72,7 +71,9 @@ body{
   gap: 1rem;
 }
 
-.contact-us, .call-us {
+.contact-us{
+  display: inline-block; 
+
   padding: 0.5rem 1rem;
   color: white;
   background-color: #ff6600;
@@ -80,6 +81,8 @@ body{
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none; 
+    text-align: center;
 }
 
 .contact-us:hover, .call-us:hover {
@@ -288,15 +291,13 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: 0; /* Ensure the overlay is behind the content */
-
+    z-index: 0; 
   }
   
   .hero-content {
     position: relative;
     z-index: 1;
-    color: white; /* Make text readable over the overlay */
+    color: black; 
     text-align: center;
     padding: 20px;
   }
@@ -347,16 +348,16 @@ body{
   }
   .service-card {
     position: relative;
-    width: 300px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
+    width: 300px; 
+    height: 200px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Smooth hover scaling */
+    transition: transform 0.3s ease; 
   }
   
   .service-card:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05); 
   }
   
   .service-image img {
@@ -413,29 +414,29 @@ body{
 .quality-section {
   display: flex;
   padding: 40px 20px;
-  background-color: #e0e0e0; /* Light gray background to keep it subtle */
+  background-color: #e0e0e0; 
 }
 
 .quality-card {
   align-items: center;
   gap: 20px;
-  background-color: #1aa7a7; /* White card background for clarity */
+  background-color: #1aa7a7; 
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0; /* Light border for definition */
+  border: 1px solid #e0e0e0; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
-  width: 48%; /* Adjusted width for spacing */
+  width: 48%; 
   text-align: center;
 }
 .quality-card1 {
   align-items: center;
   gap: 20px;
-  background-color: #555; /* White card background for clarity */
+  background-color: #555; 
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0; /* Light border for definition */
+  border: 1px solid #e0e0e0; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Soft shadow */
-  width: 48%; /* Adjusted width for spacing */
+  width: 48%; 
   text-align: center;
 }
 
@@ -456,7 +457,7 @@ body{
   font-size: 14px;
   font-style: italic;
   margin-bottom: 8px;
-  color: #555; /* Medium gray for subtitle */
+  color: #555; 
 }
 .quality-card1-title {
   font-size: 18px;
@@ -468,16 +469,16 @@ body{
   font-size: 14px;
   font-style: italic;
   margin-bottom: 8px;
-  color: #1aa7a7; /* Medium gray for subtitle */
+  color: #1aa7a7;
 }
 .quality-card1-description {
   font-size: 14px;
-  color: #1aa7a7; /* Slightly darker gray for the description */
+  color: #1aa7a7; 
   margin-bottom: 16px;
 }
 .quality-card-description {
   font-size: 14px;
-  color: #555; /* Slightly darker gray for the description */
+  color: #555; 
   margin-bottom: 16px;
 }
 
@@ -615,34 +616,13 @@ body{
     padding: 10px;
     background-color: #1aa7a7;
     color: white;
-    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; 
+    text-align: center;
   }
-  .newsletter,
-  .whitepaper{
-    background-color: #dad8d8;
-    padding: 20px;
-    
-  }
-  
-  .newsletter-form input,
-  .whitepaper-form input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .newsletter-form button,
-  .whitepaper-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #f47820;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+ 
   
   .footer-bottom {
     display: flex;
@@ -669,8 +649,9 @@ body{
     text-decoration: none;
     color: #333;
   } 
+
+
   /*Extension*/
-  /* General Page Styles */
 .construction-veranda {
   font-family: Arial, sans-serif;
   margin: 0 auto;
@@ -704,7 +685,7 @@ body{
 .construction-veranda h1 {
   text-align: center;
   font-weight: bold;
-  color: #333;
+  color: #f58220;
   margin-bottom: 10px;
 }
 
@@ -713,10 +694,6 @@ body{
   color: #666;
   line-height: 1.6;
 }
-
-
-
-
 /*whoweare*/
 .network-page {
   font-family: Arial, sans-serif;
@@ -788,15 +765,15 @@ body{
   max-width: 400px;
   margin: 100px auto;
   padding: 20px;
-  background-color: #faf7f7;
-  border-radius: 8px;
+  background-color: #ffffff;
+  border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #f96302;
 }
 
 .login-form .form-group {
@@ -818,7 +795,6 @@ h2 {
 }
 
 .login-form button {
-  width: 100%;
   padding: 10px;
   font-size: 16px;
   background-color: #f96302; 
@@ -835,7 +811,14 @@ h2 {
   margin-bottom: 10px;
   font-size: 14px;
 }
-  
+.reset-link {
+  color: #f96302;
+}
+
+.register-link {
+  color: #f96302;
+}
+ 
  
   /*adminsidebar*/
   .admin-layout {
@@ -874,12 +857,8 @@ h2 {
             text-decoration: none;
             color: #333;
             border-radius: 4px;
-            font-weight: bold; /* Makes the text bold */
+            font-weight: bold; 
             transition: background-color 0.3s;
-            &:hover {
-              background-color: #049c04ef;
-            }
-  
             &.active {
               background-color: #ffc107;
               color: #343a40;
@@ -966,31 +945,31 @@ h2 {
 
   
   .list-group-item .action-buttons .edit-btn {
-    background-color: #f96302; /* Custom orange for Edit */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    padding: 8px 12px; /* Adjust padding */
-    border-radius: 4px; /* Optional rounded corners */
+    background-color: #f96302; 
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .list-group-item .action-buttons .edit-btn:hover {
-    background-color: #e25b01; /* Darker shade for hover */
+    background-color: #e25b01; 
   }
   
   .list-group-item .action-buttons .delete-btn {
-    background-color: #c82333; /* Custom red for Delete */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    padding: 8px 12px; /* Adjust padding */
-    border-radius: 4px; /* Optional rounded corners */
+    background-color: #c82333; 
+    color: white; 
+    border: none;
+    padding: 8px 12px; 
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .list-group-item .action-buttons .delete-btn:hover {
-    background-color: #a71d2a; /* Darker shade for hover */
+    background-color: #a71d2a; 
   }
   
     
@@ -1017,22 +996,24 @@ h2 {
   }
 }
 /*contactus*/
-
-/* ContactUs.css */
-
-.section-header h2,
 .section-header p,
-.card-body h3,
 .card-body p,
 .card-body a,
 .card-body ul li {
   color: #333;
 }
+.card-body h3{
+  color: #ff6f00;
+}
+.contact-info strong {
+  color: #ff6f00;
+}
+
 
 /* Ensure text links are distinct */
 .card-body a:hover {
   text-decoration: underline;
-  color: #ff8f33;
+  color: #ff6f00;
 }
 
 /* Optional: Add styling to buttons if any */
@@ -1047,8 +1028,10 @@ button:hover {
   color: white;
 }
 
+
+
 /*members*/
-.member-cards-container {
+.member-container {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -1056,51 +1039,25 @@ button:hover {
   padding: 16px;
 }
 
-.member-card {
-  position: relative;
-  width: 300px; /* Adjust width as needed */
-  height: 300px; /* Adjust height as needed */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease; /* Smooth hover scaling */
-}
-
-.member-card:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+.member {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; 
+    overflow: hidden; 
 }
 
 .member-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
+  object-fit: cover; 
+  display: block; 
+  border-radius: 10px;
 }
 
-.member-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.member-card:hover .member-overlay {
-  opacity: 1;
-}
-
-.member-name h3 {
+.membername h3 {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
   text-align: center;
-  color: white;
+  color: #333;
 }

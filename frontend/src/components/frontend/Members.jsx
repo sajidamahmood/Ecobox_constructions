@@ -4,6 +4,8 @@ import FooterBanner from '../common/FooterBanner';
 import UpperBar from '../common/UpperBar'; 
 import HeaderNavigation from '../common/HeaderNavigation'
 import './Members.css';
+import Hero from '../common/Hero';
+
 
 const Members = () => {
   const [members, setMembers] = useState([]);
@@ -29,6 +31,8 @@ const Members = () => {
      <UpperBar/>
      <HeaderNavigation />
       <main>
+      <Hero/>
+
         <section className='section-3 bg-light py-5'>
           <div className='container py-5'>
             <h2 className='title'>Notre équipe</h2>
@@ -36,9 +40,9 @@ const Members = () => {
             <div className='row pt-20'>
               {members.length > 0 ? (
                 members.map(member => (
-                  <div key={member.id} className='col-md-4 col-lg-4 pt-4'>
-                    <div className="member-cards-container">
-                      <div className="member-card">
+                  <div key={member.id} className='col-md-4'>
+                    <div className="member-container">
+                      <div className="member">
                       <div className="member-image">
                         <img
                           src={`${baseUrl}${member.image_url}`}
@@ -46,10 +50,9 @@ const Members = () => {
                           onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }} // Placeholder image
                         />
                       </div>
-                      <div className="member-overlay">
-                      <div className="member-name">
+                      <div className="membername">
                       <h3>{member.name}</h3>
-                      </div>
+                    
                     </div>
                     </div>
                     </div>

@@ -106,7 +106,7 @@ const Register = () => {
             <div className="col-md-6">
               <div className="card shadow">
                 <div className="card-body p-5">
-                  <h3 className="text-center mb-4">Register</h3>
+                  <h2 className="text-center mb-4">Register</h2>
 
                   {error && <div className="alert alert-danger">{error}</div>}
                   {success && <div className="alert alert-success">{success}</div>}
@@ -186,9 +186,8 @@ const Register = () => {
   </div>
 </div>
 
-                    <div className="d-grid">
-                      <button type="submit" className="btn btn-primary">Register</button>
-                    </div>
+<div className="d-grid">
+<button type="submit" className="login">Register</button></div>
                   </form>
 
                   <div className="mt-3 text-center">

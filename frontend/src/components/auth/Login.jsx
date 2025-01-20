@@ -114,8 +114,7 @@ const Login = ({ onLogin }) => {
       </div>
       <div className="forgot-password-prompt">
             <p>
-              Forgot your password? <Link to="/forgot-password">Reset it here</Link>
-
+              Forgot your password? <Link to="/forgot-password" className="reset-link">Reset it here</Link>
             </p>
           </div>
     </div>
@@ -125,7 +124,7 @@ const Login = ({ onLogin }) => {
           </form>
           <div className="register-prompt">
             <p>
-              Don't have an account? <Link to="/register">Register here</Link>
+              Don't have an account? <Link to="/register" className="register-link">Register here</Link>
             </p>
           </div>
           

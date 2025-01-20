@@ -4,6 +4,8 @@ import UpperBar from '../common/UpperBar';
 import HeaderNavigation from '../common/HeaderNavigation'
 import FooterBanner from '../common/FooterBanner';
 import Services from "../frontend/Services";
+import Hero from '../common/Hero';
+
 
 
 const ConstructionVeranda = () => {
@@ -15,6 +17,8 @@ const ConstructionVeranda = () => {
         <HeaderNavigation />
 
 <main>
+<Hero/>
+
 
     <div className="construction-veranda">
       <nav className="breadcrumb">

@@ -41,10 +41,10 @@ const Header = () => {
 
   // Handle logout
   const handleLogout = () => {
-    localStorage.clear(); // Clear all localStorage data
-    setIsLoggedIn(false); // Update state to reflect logged-out status
-    navigate("/"); // Redirect to home page
-  };
+    localStorage.clear(); 
+    setIsLoggedIn(false); 
+    navigate("/"); 
+    };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -84,9 +84,11 @@ const Header = () => {
       </nav>
 
       <div className="header-contact">
-        <button className="contact-us">Contactez-nous</button>
-        <button className="call-us">01 46 61 61 61</button>
-
+      <a href="/ContactUs" className="contact-us">
+      Contactez-nous
+      </a>
+      <a href="/ContactUs" className="contact-us">01 46 61 61
+      </a>
         {isLoggedIn ? (
           <div className="user-info">
             <span onClick={toggleDropdown} className="user-dropdown-toggle">
