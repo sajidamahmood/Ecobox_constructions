@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'; 
 
 const ProjectDetail = () => {
-  const [projects, setProjects] = useState([]); // Array to hold all projects
+  const [projects, setProjects] = useState([]); 
   const [error, setError] = useState(null);
 
 

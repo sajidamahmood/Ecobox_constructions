@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import axiosInstance from '../../api/axios';
 import axios from 'axios';
+
 import { Link } from 'react-router-dom'; 
+
 import './ServiceDetails.css';
 
 const ServiceDetail = () => {
   const [services, setServices] = useState([]); // Array to hold all services
   const [error, setError] = useState(null);
+
   const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:8000';
+
+  /*const baseUrl ='https://ecobox-constructions.onrender.com/api';*/
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response1 = await axios.get(`${baseUrl}/api/services/1`);
+        const response1 = await axiosInstance.get(`${baseUrl}/api/services/1`);
         const response2 = await axios.get(`${baseUrl}/api/services/2`);
         const response3 = await axios.get(`${baseUrl}/api/services/8`);
         

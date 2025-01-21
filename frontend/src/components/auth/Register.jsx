@@ -97,61 +97,59 @@ const Register = () => {
       <HeaderNavigation />
       <main>
         <Hero 
-          preHeading="Quality. Integrity. Value" 
-          heading="Register Here" 
-          text="We offer diverse construction services, spanning residential,<br/> commercial, and industrial projects." 
+          
         />
         <div className="container mt-5">
           <div className="row justify-content-center mb-4">
             <div className="col-md-6">
               <div className="card shadow">
                 <div className="card-body p-5">
-                  <h2 className="text-center mb-4">Register</h2>
+                  <h2 className="text-center mb-4">Registre</h2>
 
                   {error && <div className="alert alert-danger">{error}</div>}
                   {success && <div className="alert alert-success">{success}</div>}
 
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                    <label htmlFor="role" className="form-label">Role</label>
+                    <label htmlFor="role" className="form-label">Rôle</label>
                     <select
     id="role"
     value={formData.role}
     onChange={handleInputChange}
     className="form-control"
   >
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
+    <option value="user">Utilisateur</option>
+    <option value="admin">Administrateur</option>
   </select>
-                      <label htmlFor="name" className="form-label">Name</label>
+                      <label htmlFor="name" className="form-label">Nom</label>
                       <input
                         type="text"
                         className="form-control"
                         id="name"
-                        placeholder="Enter your name"
+                        placeholder="Entrez votre nom"
                         value={formData.name}
                         onChange={handleInputChange}
                       />
                     </div>
                     <div className="mb-3">
-                      <label htmlFor="email" className="form-label">Email address</label>
+                      <label htmlFor="email" className="form-label">Adresse email</label>
                       <input
                         type="email"
                         className="form-control"
                         id="email"
-                        placeholder="Enter email"
+                        placeholder="Entrez l'email"
                         value={formData.email}
                         onChange={handleInputChange}
                       />
                     </div>
                     <div className="mb-3 position-relative">
-  <label htmlFor="password" className="form-label">Password</label>
+  <label htmlFor="password" className="form-label">Mot de passe</label>
   <div className="input-group">
     <input
       type={showPassword ? 'text' : 'password'}
       className="form-control"
       id="password"
-      placeholder="Enter password"
+      placeholder="Entrez le mot de passe"
       value={formData.password}
       onChange={handleInputChange}
     />
@@ -166,13 +164,13 @@ const Register = () => {
 </div>
 
 <div className="mb-3 position-relative">
-  <label htmlFor="password_confirmation" className="form-label">Confirm Password</label>
+  <label htmlFor="password_confirmation" className="form-label">Confirmez le mot de passe</label>
   <div className="input-group">
     <input
       type={showPassword ? 'text' : 'password'}
       className="form-control"
       id="password_confirmation"
-      placeholder="Confirm password"
+      placeholder="Confirmez le mot de passe"
       value={formData.password_confirmation}
       onChange={handleInputChange}
     />
@@ -187,11 +185,11 @@ const Register = () => {
 </div>
 
 <div className="d-grid">
-<button type="submit" className="login">Register</button></div>
+<button type="submit" className="login">Registre</button></div>
                   </form>
 
                   <div className="mt-3 text-center">
-                    <p>Already have an account? <a href="/login">Login</a></p>
+                    <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
                   </div>
                 </div>
               </div>

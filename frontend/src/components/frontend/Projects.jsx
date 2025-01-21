@@ -6,14 +6,14 @@ const Projects = () => {
   
 
   const [projects, setProjects] = useState([]);
-  const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:8000'; // Adjust according to your setup
+  const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:8000'; 
 
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:8000/api/projects');
-        console.log(response.data); // Check the fetched data
+        console.log(response.data); 
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error.message);

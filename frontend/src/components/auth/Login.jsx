@@ -11,13 +11,11 @@ const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showPassword, setShowPassword] = useState(false); 
 
   const navigate = useNavigate();
 
-  const handleLoginCallback = (data) => {
-    console.log("User login callback:", data);
-  };
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +33,10 @@ const Login = ({ onLogin }) => {
     }
 
     try {
-      const response = await axiosInstance.post("http://127.0.0.1:8000/api/login", { email, password });
+
+      const response = await axiosInstance.post('http://127.0.0.1:8000/api/login', { email, password }, { withCredentials: true });
+      console.log('Login Response:', response.data);
+
       const { token, user } = response.data;
 
       // Store user data in localStorage
@@ -44,7 +45,6 @@ const Login = ({ onLogin }) => {
       localStorage.setItem('username', user.name);
 
       setAuthHeader(token);
-      handleLoginCallback({ token, user });
 
       const currentPath = window.location.pathname;
       if (currentPath === "/" || currentPath === "/login") {
@@ -57,6 +57,8 @@ const Login = ({ onLogin }) => {
         }
       }
     } catch (error) {
+      console.error("Error during login:", error);
+
       if (error.response) {
         setError(error.response.data.message || 'An error occurred, please try again.');
       } else if (error.request) {
@@ -72,13 +74,11 @@ const Login = ({ onLogin }) => {
       <HeaderNavigation />
       <main>
         <Hero 
-          preHeading="Quality. Integrity. Value" 
-          heading="Login Here" 
-          text="We offer diverse construction services, spanning residential,<br/> commercial, and industrial projects." 
+          
         />
 
         <div className="login-container">
-          <h2>Login</h2>
+          <h2>Se connecter</h2>
           {error && <p className="error-text">{error}</p>}
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
@@ -88,19 +88,19 @@ const Login = ({ onLogin }) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder="Entrez votre email"
                 required
               />
             </div>
             <div className="form-group position-relative">
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password">Mot de passe</label>
       <div className="input-group">
         <input
           type={showPassword ? 'text' : 'password'}
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
+          placeholder=" Entrez votre mot de passe"
           className="form-control"
           required
         />
@@ -112,19 +112,15 @@ const Login = ({ onLogin }) => {
           {showPassword ? <FaEyeSlash /> : <FaEye />}
         </span>
       </div>
-      <div className="forgot-password-prompt">
-            <p>
-              Forgot your password? <Link to="/forgot-password" className="reset-link">Reset it here</Link>
-            </p>
-          </div>
+      
     </div>
             <button type="submit" className="login">
-              Login
+            Se connecter
             </button>
           </form>
           <div className="register-prompt">
             <p>
-              Don't have an account? <Link to="/register" className="register-link">Register here</Link>
+            Vous n'avez pas de compte ? <Link to="/register" className="register-link"> Inscrivez-vous ici</Link>
             </p>
           </div>
           

@@ -1,14 +1,18 @@
 import axios from 'axios';
 
-console.log("Environment Variables:", import.meta.env); // Debug all variables
+
+/*console.log("Enviroment Variables:",import.meta.env);*/
 
 const axiosInstance = axios.create({
 
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api',
-  withCredentials: true,
+  baseURL: import.meta.env.VITE_API_BASE_URL ||'http://127.0.0.1:8000/api',
+  headers: {
+    'Content-Type': 'application/json',
+    withCredentials: true
+  },
 });
 
-console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+console.log("API Base URL:");
 
 export const setAuthHeader = (token) => {
   if (token) {

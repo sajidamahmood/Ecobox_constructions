@@ -26,7 +26,7 @@ const HowItWorksSection = () => {
   allowFullScreen
 ></iframe>
 
-        <div class="video_des">
+        <div className="video_des">
 						<h3>mahmood</h3>
 						<p>Animateur télé présente Ecoboxenergie</p>
            

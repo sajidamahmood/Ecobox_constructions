@@ -26,7 +26,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgot-password">
-      <h2>Forgot Password</h2>
+      <h2>Mot de Passe Oublié</h2>
       {status && <p className="success-text">{status}</p>}
       {error && <p className="error-text">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -36,12 +36,12 @@ const ForgotPassword = () => {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
+          placeholder="Entrez votre email"
           required
         />
-        <button type="submit">Send Reset Link</button>
+        <button type="submit">Envoyer le lien de réinitialisation</button>
       </form>
-      <Link to="/login">Back to Login</Link>
+      <Link to="/login">Retour à la connexion</Link>
     </div>
   );
 };
