@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import axiosInstance from '../../api/axios';
-
 import CreateMessage from "./CreateMessage";
 
 
@@ -64,7 +63,6 @@ const QuoteForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate inputs
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);

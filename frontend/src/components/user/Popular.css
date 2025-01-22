@@ -1,0 +1,61 @@
+/* Main container for popular stocks */
+.popular-stocks {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 80%; 
+    margin-left: 10%; 
+    margin-right: 10%;
+  }
+  
+  /* Header style */
+  .popular-stocks h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Each stock item */
+  .stock-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .stock-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Stock name and price */
+  .stock-item .name {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .stock-item .price {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+  }
+  
+  .stock-item .change {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .stock-item .positive {
+    color: green;
+  }
+  
+  .stock-item .negative {
+    color: red;
+  }
+  

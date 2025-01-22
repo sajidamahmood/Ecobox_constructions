@@ -1,0 +1,27 @@
+/* ChartSection.css */
+.chart-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 80%; 
+    margin-left: 10%; 
+    margin-right: 10%;
+  }
+  
+  .chart-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .chart-placeholder {
+    height: 300px; 
+  }
+  
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  

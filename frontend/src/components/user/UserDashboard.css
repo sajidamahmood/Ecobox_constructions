@@ -1,0 +1,46 @@
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .search-bar {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .stats-cards {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .stat-card {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .purple { background-color: #6a1b9a; }
+  .blue { background-color: #1565c0; }
+  .dark-blue { background-color: #1e88e5; }
+  
+  .chart-section {
+    margin: 20px 20;
+  }
+  
+  .popular-stocks {
+    margin: 20px 20;
+  }
+  
+  .stock-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .profit { color: green; }
+  .loss { color: red; }
+  

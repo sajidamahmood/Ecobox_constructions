@@ -1,0 +1,25 @@
+.stat-card {
+    padding: 20px;
+    border-radius: 8px;
+    color: white; /* White text color for better visibility */
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .green {
+    background-color: #85cc88; /* Green */
+  }
+  
+  .orange {
+    background-color: #febc59; /* Orange */
+  }
+  
+  .blue {
+    background-color: #2196F3; /* Blue */
+  }
+  
+  /* Optionally, you can add hover effects for better interaction */
+  .stat-card:hover {
+    opacity: 0.9;
+  }
+  

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../common/Header';
 import HeaderNavigation from '../common/HeaderNavigation';
 import FooterBanner from '../common/FooterBanner';
 import Hero from '../common/Hero';
@@ -18,24 +17,21 @@ const Register = () => {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showPassword, setShowPassword] = useState(false); 
 
 
-  // Handle input change and update state
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Reset error before validation
-    setSuccess(''); // Reset success message
+    setError(''); 
+    setSuccess(''); 
   
-    console.log('Form Data before Validation:', formData); // Debug form data before validation
+    console.log('Form Data before Validation:', formData); 
   
-    // Validation checks
     if (formData.name.length < 3) {
       setError('Username must be at least 3 characters long.');
       return;
@@ -48,7 +44,6 @@ const Register = () => {
     
     const password = formData.password;
   
-    // Check password length and complexity
     if (password.length < 8) {
       setError('Password must be at least 8 characters long.');
       return;
@@ -72,18 +67,18 @@ const Register = () => {
       return;
     }
   
-    console.log('Form Data after Validation:', formData); // Debug form data after passing validation
-  
-    // Proceed with API request if all validations pass
+    console.log('Form Data after Validation:', formData);   
     try {
-      const response = await Axios.post('https://ecobox-constructions.onrender.com/api/register', formData);
-      console.log('API Response:', response.data); // Debug successful API response
+      const response = await Axios.post('http://127.0.0.1:8000/api/register', formData);
+
+      /*const response = await Axios.post('https://ecobox-constructions.onrender.com/api/register', formData);*/
+      
+      console.log('API Response:', response.data); 
       setSuccess('Registration successful!');
       setError('');
     } catch (error) {
-      console.log('API Error Response:', error.response?.data); // Debug API error response
+      console.log('API Error Response:', error.response?.data); 
       if (error.response && error.response.data.errors) {
-        // Show specific validation errors from Laravel
         setError(Object.values(error.response.data.errors).join(' '));
       } else {
         setError('Registration failed. Please try again.');

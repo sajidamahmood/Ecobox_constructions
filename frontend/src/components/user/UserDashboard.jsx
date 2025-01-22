@@ -1,12 +1,16 @@
 import React from 'react';
-
-const UserDashboard = () => {
-  return (
-    <div>
-      <h1>User Dashboard</h1>
-      <p>Welcome to the User dashboard.</p>
-    </div>
-  );
-};
+import Header from './Header';
+import StatsCards from './StatsCards';
+import ChartSection from './ChartSection';
+import Popular from './Popular';
+import './UserDashboard.css'; 
+const UserDashboard = () => (
+  <div className="user-dashboard">
+    <Header />
+    <StatsCards />
+    <ChartSection />
+    <Popular />
+  </div>
+);
 
 export default UserDashboard;

@@ -4,6 +4,7 @@ import FooterBanner from '../common/FooterBanner';
 import Hero from '../common/Hero';
 import { useNavigate, Link } from "react-router-dom";
 import axiosInstance, { setAuthHeader } from "../../api/axios";
+
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
@@ -33,6 +34,12 @@ const Login = ({ onLogin }) => {
     }
 
     try {
+      /*await axios.get('https://ecobox-constructions.onrender.com/sanctum/csrf-cookie', {
+        withCredentials: true,
+      });*/
+  
+      /*const response = await axiosInstance.post('/login', { email, password }, { withCredentials: true });
+      console.log('Login Response:', response.data);*/
 
       const response = await axiosInstance.post('http://127.0.0.1:8000/api/login', { email, password }, { withCredentials: true });
       console.log('Login Response:', response.data);

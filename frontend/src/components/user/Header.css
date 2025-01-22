@@ -1,0 +1,64 @@
+/* Header container */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Search bar style */
+  .search-bar {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-bar:focus {
+    border-color: #66afe9;
+  }
+  
+  /* Header icons container */
+  .header-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Button style */
+  .settings-btn,
+  .profile-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .settings-btn:hover,
+  .profile-btn:hover {
+    color: #007bff;
+  }
+  
+  /* Optional responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-bar {
+      width: 60%;
+      margin-bottom: 10px;
+    }
+  
+    .header-icons {
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+  
